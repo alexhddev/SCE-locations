@@ -2,6 +2,7 @@ import './App.css'
 import { ElderWithLocation } from './model/Model'
 import { useState } from 'react'
 import {DataLoader} from './components/DataLoader'
+import Map from './components/Map'
 
 function App() {
   const [elders, setElders] = useState<ElderWithLocation[]>([])
@@ -18,9 +19,10 @@ function App() {
 
 
   return (
-    <div>
+    <div className='App'>
       <DataLoader onFileLoad={handleFileUpload}></DataLoader>
       <button onClick={printElders}>Print Elders</button>
+      <Map/>
 
     </div>
   )

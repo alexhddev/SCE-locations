@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.leaflet-container {
+  height: 100vh;
+  width: 100vw;
+}
+/* you can have custom dimension according to your use case */
+
 a {
   font-weight: 500;
   color: #646cff;
