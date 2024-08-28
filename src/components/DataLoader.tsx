@@ -15,8 +15,6 @@ const someElder:ElderWithLocation = {
 export function DataLoader(props: DataLoaderProps) {
 
     function handleFileChange(e: any) {
-        console.log(e)
-        console.log('file uploaded')
         const file = e.target.files[0]
         if (file) {
             const reader = new FileReader()
