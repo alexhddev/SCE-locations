@@ -10,10 +10,6 @@ function App() {
   function handleFileUpload(data: any) {
     setElders(data)
   }
-  function printElders() {
-    console.log(elders)
-  }
-
 
   
 
@@ -21,8 +17,7 @@ function App() {
   return (
     <div className='App'>
       <DataLoader onFileLoad={handleFileUpload}></DataLoader>
-      <button onClick={printElders}>Print Elders</button>
-      <Map/>
+      <Map elders={elders}/>
 
     </div>
   )

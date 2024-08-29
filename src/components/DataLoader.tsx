@@ -38,7 +38,7 @@ export function DataLoader(props: DataLoaderProps) {
 
     return (
         <div>
-            <input type="file" onChange={handleFileChange}></input>
+            <input type="file" onChange={handleFileChange} ></input>
         </div>
     )
 }
