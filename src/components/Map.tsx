@@ -25,12 +25,25 @@ export default function Map(props: MapProps) {
 
 function DrawMarkers(elders: ElderWithLocation[]) {
   return elders.map((elder) => {
-    return (
-      <Marker position={[elder.lat, elder.lon]}>
-        <Popup>
-          {elder.congregation} <br/> {elder.name}
-        </Popup>
-      </Marker>
-    )
+    if (elder.lat && elder.lon) {
+      return (
+        <Marker position={randomizePosition(elder.lat, elder.lon)}>
+          <Popup>
+            {elder.congregation} <br/> {elder.name}
+          </Popup>
+        </Marker>
+      )      
+    }
   })
+}
+
+function randomizePosition(lat: number, lon: number):LatLngExpression {
+  const indent = 0.05;
+  const latIndent = Math.random() * indent * plusOrMinus();
+  const lonIndent = Math.random() * indent * plusOrMinus();
+  return [lat + latIndent, lon + lonIndent];
+}
+
+function plusOrMinus() {
+  return Math.random() < 0.5 ? -1 : 1;
 }
